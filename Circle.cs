@@ -30,7 +30,7 @@ namespace ShapesDrawer_v2
         
         public void DrawFigure()
         {
-            bmp = new Bitmap(diameter, diameter);
+            bmp = new Bitmap(759, 513);            
             SolidBrush brush = new SolidBrush(bodyColor);
             Pen pen = new Pen(borderColor);
             pen.Width = 5;
