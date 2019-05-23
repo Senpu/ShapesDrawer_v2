@@ -105,6 +105,7 @@
             this.chooseBodyColor.Name = "chooseBodyColor";
             this.chooseBodyColor.Size = new System.Drawing.Size(121, 21);
             this.chooseBodyColor.TabIndex = 5;
+            this.chooseBodyColor.SelectedIndexChanged += new System.EventHandler(this.chooseBodyColor_SelectedIndexChanged);
             // 
             // chooseBorderColor
             // 
@@ -118,6 +119,7 @@
             this.chooseBorderColor.Name = "chooseBorderColor";
             this.chooseBorderColor.Size = new System.Drawing.Size(121, 21);
             this.chooseBorderColor.TabIndex = 6;
+            this.chooseBorderColor.SelectedIndexChanged += new System.EventHandler(this.chooseBorderColor_SelectedIndexChanged);
             // 
             // bodyColorLabel
             // 
@@ -154,7 +156,6 @@
             this.btn_setShape.TabIndex = 10;
             this.btn_setShape.Text = "Set shape";
             this.btn_setShape.UseVisualStyleBackColor = true;
-            this.btn_setShape.Click += new System.EventHandler(this.btn_setShape_Click);
             // 
             // main_form
             // 
