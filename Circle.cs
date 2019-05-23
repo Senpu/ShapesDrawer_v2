@@ -40,9 +40,9 @@ namespace ShapesDrawer_v2
 
         public bool isFigureClicked(int x, int y)
         {            
-            double xCenter = x + diameter/2;
-            double yCenter = y + diameter/2;
-            if (((Math.Pow((x + xCenter), 2)) + (Math.Pow((y + yCenter), 2))) <= Math.Pow((diameter / 2), 2))
+            double xCenter = this.x + diameter/2;
+            double yCenter = this.y + diameter/2;
+            if (((Math.Pow((x - xCenter), 2)) + (Math.Pow((y - yCenter), 2))) < Math.Pow((diameter / 2), 2))
             {
                 return true;
             }

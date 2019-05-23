@@ -9,7 +9,7 @@ namespace ShapesDrawer_v2
     {
         public main_form()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
         // Shapes drawn are stored in this list.
         List<Object> shapesDrawnList = new List<Object>();
@@ -21,10 +21,12 @@ namespace ShapesDrawer_v2
         Color bodyColor = new Color();
         Color borderColor = new Color();
 
+        Circle circle = new Circle(Color.Black, Color.Black, 5, 1, 1);
+
         private void btnDraw_Click(object sender, EventArgs e)
         {
             Int32.TryParse(shapeParam.Text, out int parsedParam);
-            Circle circle = new Circle(bodyColor, borderColor, parsedParam, x, y);
+            circle = new Circle(bodyColor, borderColor, parsedParam, x, y);
             shapesDrawnList.Add(circle);
             circle.DrawCircle();
             pictureBox.Image = circle.bmp;
@@ -72,6 +74,18 @@ namespace ShapesDrawer_v2
         {
             x = e.X;
             y = e.Y;
+        }
+
+        private void pictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if(circle.isFigureClicked(x, y))
+            {
+                MessageBox.Show("Figure is selected");
+            }
+            else if (!(circle.isFigureClicked(x, y)))
+            {
+                MessageBox.Show("Figure is not selected");
+            }
         }
 
         private void chooseShapeList_SelectedIndexChanged(object sender, EventArgs e)
