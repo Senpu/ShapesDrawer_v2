@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShapesDrawer_v2
@@ -28,9 +29,16 @@ namespace ShapesDrawer_v2
             Int32.TryParse(shapeParam.Text, out int parsedParam);
             circle = new Circle(bodyColor, borderColor, parsedParam, x, y);
             shapesDrawnList.Add(circle);
-            circle.DrawCircle();
+            circle.DrawFigure();
+            circle.bmp.MakeTransparent();
             pictureBox.Image = circle.bmp;
+            // Redraw();
         }
+
+       // private void Redraw()
+       // {
+       //     shapesDrawnList.ForEach(item => item.DrawFigure());
+       // }
 
         private void chooseBodyColor_SelectedIndexChanged(object sender, EventArgs e)
         {

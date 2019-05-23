@@ -17,7 +17,7 @@ namespace ShapesDrawer_v2
         public int x, y;
         public Color bodyColor = new Color();
         public Color borderColor = new Color();
-        public Bitmap bmp = new Bitmap(759, 513);
+        public Bitmap bmp = new Bitmap(1, 1);
 
         public Circle(Color bodyColor, Color borderColor, int radius, int x, int y)
         {
@@ -28,8 +28,9 @@ namespace ShapesDrawer_v2
             this.y = y - radius;
         } 
         
-        public void DrawCircle()
+        public void DrawFigure()
         {
+            bmp = new Bitmap(diameter, diameter);
             SolidBrush brush = new SolidBrush(bodyColor);
             Pen pen = new Pen(borderColor);
             pen.Width = 5;
