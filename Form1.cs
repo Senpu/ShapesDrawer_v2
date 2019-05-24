@@ -22,25 +22,47 @@ namespace ShapesDrawer_v2
         Color bodyColor = new Color();
         Color borderColor = new Color();
 
-        // Creating an instance of a circle class with random parameters. 
+        // Creating an instance of a circle class with default parameters. 
         Circle circle = new Circle(Color.Black, Color.Black, 5, 1, 1);
+
+        // Creating an instance of a square class with default parameters. 
+        Square square = new Square(Color.Black, Color.Black, 5, 1, 1);
 
         private void btnDraw_Click(object sender, EventArgs e)
         {
             // Parsing user input to Int32.
             Int32.TryParse(shapeParam.Text, out int parsedParam);
 
-            circle = new Circle(bodyColor, borderColor, parsedParam, x, y);
+            if (chooseShapeList.Text == "Circle")
+            {
+                circle = new Circle(bodyColor, borderColor, parsedParam, x, y);
 
-            shapesDrawnList.Add(circle);
+                shapesDrawnList.Add(circle);
 
-            circle.DrawFigure();
+                circle.DrawFigure();
 
-            circle.bmp.MakeTransparent();
+                circle.bmp.MakeTransparent();
 
-            pictureBox.Image = circle.bmp;
+                pictureBox.Image = circle.bmp;
 
-            // Redraw();
+                // Redraw();
+            }
+
+            else if (chooseShapeList.Text == "Square")
+            {
+                square = new Square(bodyColor, borderColor, parsedParam, x, y);
+
+                shapesDrawnList.Add(square);
+
+                square.DrawFigure();
+
+                square.bmp.MakeTransparent();
+
+                pictureBox.Image = square.bmp;
+
+                // Redraw();
+            }
+
         }
 
        // private void Redraw()
