@@ -13,10 +13,10 @@ namespace ShapesDrawer_v2
 {
     class Circle
     {
-        public int diameter;
-        public int x, y;
-        public Color bodyColor = new Color();
-        public Color borderColor = new Color();
+        int diameter;
+        int x, y;
+        Color bodyColor = new Color();
+        Color borderColor = new Color();
         public Bitmap bmp = new Bitmap(1, 1);
 
         public Circle(Color bodyColor, Color borderColor, int radius, int x, int y)

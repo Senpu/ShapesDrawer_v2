@@ -116,11 +116,11 @@ namespace ShapesDrawer_v2
 
         private void pictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if(circle.isFigureClicked(x, y))
+            if(circle.isFigureClicked(x, y) | square.isFigureClicked(x, y))
             {
                 MessageBox.Show("Figure is selected");
             }
-            else if (!(circle.isFigureClicked(x, y)))
+            else if (!(circle.isFigureClicked(x, y) | square.isFigureClicked(x, y)))
             {
                 MessageBox.Show("Figure is not selected");
             }

@@ -11,44 +11,50 @@ using System.Windows.Forms;
 
 namespace ShapesDrawer_v2
 {
-    class Square
+    class Triangle
     {
-        int side;
-        int x, y;
+        Point vertex1;
+        Point vertex2;
+        Point vertex3;
         Color bodyColor = new Color();
         Color borderColor = new Color();
         public Bitmap bmp = new Bitmap(1, 1);
 
-        public Square(Color bodyColor, Color borderColor, int side, int x, int y)
+        public Triangle(Color bodyColor, Color borderColor, Point vertex1, Point vertex2, Point vertex3)
         {
             this.bodyColor = bodyColor;
             this.borderColor = borderColor;
-            this.x = x - side / 2;
-            this.y = y - side / 2;
-            this.side = side;
+            this.vertex1 = vertex1;
+            this.vertex2 = vertex2;
+            this.vertex3 = vertex3;
         }
 
         public void DrawFigure()
         {
+            Point[] triangle =
+            {
+                vertex1,
+                vertex2,
+                vertex3
+            };
             bmp = new Bitmap(759, 513);
             SolidBrush brush = new SolidBrush(bodyColor);
             Pen pen = new Pen(borderColor);
             pen.Width = 5;
             Graphics gfx = Graphics.FromImage(bmp);
-            gfx.DrawRectangle(pen, x, y, side, side);
-            gfx.FillRectangle(brush, x + 2.5F, y + 2.5F, side - 5, side - 5);
+            gfx.DrawPolygon(pen, triangle);
+            gfx.FillPolygon(brush, triangle);
         }
 
-        public bool isFigureClicked(int x, int y)
-        {            
-            int xRightBottomVertex = this.x + side;
-            int yRightBottomVertex = this.y + side;
-            if ((x >= this.x && x <= xRightBottomVertex) && (y >= this.y && y <= yRightBottomVertex))
-            {
-                return true;
-            }
-            else
-                return false;
-        }
+        //public bool isFigureClicked(int x, int y)
+        //{
+        //
+        //    if ()
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //        return false;
+        //}
     }
 }
