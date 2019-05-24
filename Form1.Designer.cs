@@ -39,6 +39,13 @@
             this.borderColorLabel = new System.Windows.Forms.Label();
             this.chooseShapeLabel = new System.Windows.Forms.Label();
             this.btn_setShape = new System.Windows.Forms.Button();
+            this.vertex1Label = new System.Windows.Forms.Label();
+            this.vertex2Label = new System.Windows.Forms.Label();
+            this.vertex3Label = new System.Windows.Forms.Label();
+            this.rBtn1 = new System.Windows.Forms.RadioButton();
+            this.rBtn2 = new System.Windows.Forms.RadioButton();
+            this.rBtn3 = new System.Windows.Forms.RadioButton();
+            this.shapeParamLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,11 +165,90 @@
             this.btn_setShape.Text = "Set shape";
             this.btn_setShape.UseVisualStyleBackColor = true;
             // 
+            // vertex1Label
+            // 
+            this.vertex1Label.AutoSize = true;
+            this.vertex1Label.Location = new System.Drawing.Point(857, 66);
+            this.vertex1Label.Name = "vertex1Label";
+            this.vertex1Label.Size = new System.Drawing.Size(0, 13);
+            this.vertex1Label.TabIndex = 11;
+            this.vertex1Label.Visible = false;
+            // 
+            // vertex2Label
+            // 
+            this.vertex2Label.AutoSize = true;
+            this.vertex2Label.Location = new System.Drawing.Point(857, 87);
+            this.vertex2Label.Name = "vertex2Label";
+            this.vertex2Label.Size = new System.Drawing.Size(0, 13);
+            this.vertex2Label.TabIndex = 12;
+            this.vertex2Label.Visible = false;
+            // 
+            // vertex3Label
+            // 
+            this.vertex3Label.AutoSize = true;
+            this.vertex3Label.Location = new System.Drawing.Point(857, 110);
+            this.vertex3Label.Name = "vertex3Label";
+            this.vertex3Label.Size = new System.Drawing.Size(0, 13);
+            this.vertex3Label.TabIndex = 13;
+            this.vertex3Label.Visible = false;
+            // 
+            // rBtn1
+            // 
+            this.rBtn1.AutoSize = true;
+            this.rBtn1.Location = new System.Drawing.Point(793, 62);
+            this.rBtn1.Name = "rBtn1";
+            this.rBtn1.Size = new System.Drawing.Size(67, 17);
+            this.rBtn1.TabIndex = 14;
+            this.rBtn1.TabStop = true;
+            this.rBtn1.Text = "Vertex 1:";
+            this.rBtn1.UseVisualStyleBackColor = true;
+            this.rBtn1.Visible = false;
+            // 
+            // rBtn2
+            // 
+            this.rBtn2.AutoSize = true;
+            this.rBtn2.Location = new System.Drawing.Point(793, 85);
+            this.rBtn2.Name = "rBtn2";
+            this.rBtn2.Size = new System.Drawing.Size(67, 17);
+            this.rBtn2.TabIndex = 15;
+            this.rBtn2.TabStop = true;
+            this.rBtn2.Text = "Vertex 2:";
+            this.rBtn2.UseVisualStyleBackColor = true;
+            this.rBtn2.Visible = false;
+            // 
+            // rBtn3
+            // 
+            this.rBtn3.AutoSize = true;
+            this.rBtn3.Location = new System.Drawing.Point(793, 108);
+            this.rBtn3.Name = "rBtn3";
+            this.rBtn3.Size = new System.Drawing.Size(67, 17);
+            this.rBtn3.TabIndex = 16;
+            this.rBtn3.TabStop = true;
+            this.rBtn3.Text = "Vertex 3:";
+            this.rBtn3.UseVisualStyleBackColor = true;
+            this.rBtn3.Visible = false;
+            // 
+            // shapeParamLabel
+            // 
+            this.shapeParamLabel.AutoSize = true;
+            this.shapeParamLabel.Location = new System.Drawing.Point(1030, 176);
+            this.shapeParamLabel.Name = "shapeParamLabel";
+            this.shapeParamLabel.Size = new System.Drawing.Size(55, 13);
+            this.shapeParamLabel.TabIndex = 17;
+            this.shapeParamLabel.Text = "Parameter";
+            // 
             // main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1359, 651);
+            this.Controls.Add(this.shapeParamLabel);
+            this.Controls.Add(this.rBtn3);
+            this.Controls.Add(this.rBtn2);
+            this.Controls.Add(this.rBtn1);
+            this.Controls.Add(this.vertex3Label);
+            this.Controls.Add(this.vertex2Label);
+            this.Controls.Add(this.vertex1Label);
             this.Controls.Add(this.btn_setShape);
             this.Controls.Add(this.chooseShapeLabel);
             this.Controls.Add(this.borderColorLabel);
@@ -195,6 +281,13 @@
         private System.Windows.Forms.Label borderColorLabel;
         private System.Windows.Forms.Label chooseShapeLabel;
         private System.Windows.Forms.Button btn_setShape;
+        private System.Windows.Forms.Label vertex1Label;
+        private System.Windows.Forms.Label vertex2Label;
+        private System.Windows.Forms.Label vertex3Label;
+        private System.Windows.Forms.RadioButton rBtn1;
+        private System.Windows.Forms.RadioButton rBtn2;
+        private System.Windows.Forms.RadioButton rBtn3;
+        private System.Windows.Forms.Label shapeParamLabel;
     }
 }
 
