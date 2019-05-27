@@ -17,7 +17,6 @@ namespace ShapesDrawer_v2
         int x, y;
         Color bodyColor = new Color();
         Color borderColor = new Color();
-        public Bitmap bmp = new Bitmap(1, 1);
 
         public Circle(Color bodyColor, Color borderColor, int radius, int x, int y)
         {
@@ -29,14 +28,12 @@ namespace ShapesDrawer_v2
         } 
         
         public void DrawFigure()
-        {
-            bmp = new Bitmap(759, 513);            
+        {           
             SolidBrush brush = new SolidBrush(bodyColor);
             Pen pen = new Pen(borderColor);
             pen.Width = 5;
-            Graphics gfx = Graphics.FromImage(bmp);
-            gfx.DrawEllipse(pen, x, y, diameter, diameter);
-            gfx.FillEllipse(brush, x+2.5F, y+2.5F, diameter-5, diameter-5);
+            main_form.gfx.DrawEllipse(pen, x, y, diameter, diameter);
+            main_form.gfx.FillEllipse(brush, x+2.5F, y+2.5F, diameter-5, diameter-5);
         }
 
         public bool isFigureClicked(int x, int y)

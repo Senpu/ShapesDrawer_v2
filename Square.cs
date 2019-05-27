@@ -17,7 +17,6 @@ namespace ShapesDrawer_v2
         int x, y;
         Color bodyColor = new Color();
         Color borderColor = new Color();
-        public Bitmap bmp = new Bitmap(1, 1);
 
         public Square(Color bodyColor, Color borderColor, int side, int x, int y)
         {
@@ -30,13 +29,11 @@ namespace ShapesDrawer_v2
 
         public void DrawFigure()
         {
-            bmp = new Bitmap(759, 513);
             SolidBrush brush = new SolidBrush(bodyColor);
             Pen pen = new Pen(borderColor);
             pen.Width = 5;
-            Graphics gfx = Graphics.FromImage(bmp);
-            gfx.DrawRectangle(pen, x, y, side, side);
-            gfx.FillRectangle(brush, x + 2.5F, y + 2.5F, side - 5, side - 5);
+            main_form.gfx.DrawRectangle(pen, x, y, side, side);
+            main_form.gfx.FillRectangle(brush, x + 2.5F, y + 2.5F, side - 5, side - 5);
         }
 
         public bool isFigureClicked(int x, int y)

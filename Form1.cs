@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShapesDrawer_v2
@@ -12,6 +17,7 @@ namespace ShapesDrawer_v2
         {
             InitializeComponent();            
         }
+
         // Shapes drawn are stored in this list.
         List<Object> shapesDrawnList = new List<Object>();
 
@@ -30,6 +36,10 @@ namespace ShapesDrawer_v2
         Color bodyColor = new Color();
         Color borderColor = new Color();
 
+        //Canvas to draw on.
+        static public Bitmap bmp = new Bitmap(759, 513);
+        static public Graphics gfx = Graphics.FromImage(bmp);
+    
         // Creating an instance of a circle class with default parameters. 
         Circle circle = new Circle(Color.Black, Color.Black, 5, 1, 1);
 
@@ -39,6 +49,10 @@ namespace ShapesDrawer_v2
         // Creating an instance of a triangle class with default parameters. 
         Triangle triangle = new Triangle(Color.Black, Color.Black, defpoint1, defpoint2, defpoint3);
 
+        // Creating delegate to use figure's draw methods when redrawing canvas.
+        delegate void Redraw();
+        Redraw redraw;
+
         private void btnDraw_Click(object sender, EventArgs e)
         {
             // Parsing user input to Int32.
@@ -47,54 +61,31 @@ namespace ShapesDrawer_v2
             if (chooseShapeList.Text == "Circle")
             {
                 circle = new Circle(bodyColor, borderColor, parsedParam, x, y);
-
                 shapesDrawnList.Add(circle);
-
                 circle.DrawFigure();
-
-                circle.bmp.MakeTransparent();
-
-                pictureBox.Image = circle.bmp;
-
-                // Redraw();
+                bmp.MakeTransparent();
+                pictureBox.Image = bmp;
             }
 
             else if (chooseShapeList.Text == "Square")
             {
                 square = new Square(bodyColor, borderColor, parsedParam, x, y);
-
                 shapesDrawnList.Add(square);
-
                 square.DrawFigure();
-
-                square.bmp.MakeTransparent();
-
-                pictureBox.Image = square.bmp;
-
-                // Redraw();
+                bmp.MakeTransparent();
+                pictureBox.Image = bmp;
             }
 
             else if (chooseShapeList.Text == "Triangle")
             {
                 triangle = new Triangle(bodyColor, borderColor, vertex1, vertex2, vertex3);
-
                 shapesDrawnList.Add(triangle);
-
                 triangle.DrawFigure();
-
-                triangle.bmp.MakeTransparent();
-
-                pictureBox.Image = triangle.bmp;
-
-                // Redraw();
+                bmp.MakeTransparent();
+                pictureBox.Image = bmp;
             }
 
         }
-
-       // private void Redraw()
-       // {
-       //     shapesDrawnList.ForEach(item => item.DrawFigure());
-       // }
 
         private void chooseBodyColor_SelectedIndexChanged(object sender, EventArgs e)
         {
