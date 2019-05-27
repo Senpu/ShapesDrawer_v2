@@ -49,9 +49,6 @@ namespace ShapesDrawer_v2
         // Creating an instance of a triangle class with default parameters. 
         Triangle triangle = new Triangle(Color.Black, Color.Black, defpoint1, defpoint2, defpoint3);
 
-        // Creating delegate to use figure's draw methods when redrawing canvas.
-        delegate void Redraw();
-        Redraw redraw;
 
         private void btnDraw_Click(object sender, EventArgs e)
         {
@@ -152,11 +149,11 @@ namespace ShapesDrawer_v2
 
         private void pictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (circle.isFigureClicked(x, y) | square.isFigureClicked(x, y) | triangle.isFigureClicked(x, y))
+            if (circle.isFigureClicked(x, y) | square.isFigureClicked(x, y))
             {
                 MessageBox.Show("Figure is selected");
             }
-            else if (!(circle.isFigureClicked(x, y) | square.isFigureClicked(x, y)) | triangle.isFigureClicked(x, y))
+            else if (!(circle.isFigureClicked(x, y) | square.isFigureClicked(x, y)))
             {
                 MessageBox.Show("Figure is not selected");
             }
