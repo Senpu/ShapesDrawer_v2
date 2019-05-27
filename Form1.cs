@@ -103,6 +103,11 @@ namespace ShapesDrawer_v2
             }
         }
 
+        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
         private void chooseBorderColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (chooseBorderColor.Text)
@@ -144,18 +149,6 @@ namespace ShapesDrawer_v2
                 vertex3Label.Text = ($"X: {x}, Y: {y}");
                 vertex3.X = x;
                 vertex3.Y = y;
-            }
-        }
-
-        private void pictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (circle.isFigureClicked(x, y) | square.isFigureClicked(x, y))
-            {
-                MessageBox.Show("Figure is selected");
-            }
-            else if (!(circle.isFigureClicked(x, y) | square.isFigureClicked(x, y)))
-            {
-                MessageBox.Show("Figure is not selected");
             }
         }
 
